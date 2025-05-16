@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="sms.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📘 Student Management System</h1>
+    </header>
+
+    <label class="dark-toggle">
+      <input type="checkbox" id="dark-mode-toggle" /> Dark Mode
+    </label>
+
+    <form id="student-form">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Student Name" required />
+        <input type="text" id="roll" placeholder="Roll Number" required />
+        <input type="text" id="branch" placeholder="Branch" required />
+        <button type="submit">Add</button>
+      </div>
+    </form>
+
+    <input
+      type="text"
+      id="search"
+      placeholder="Search by name..."
+      oninput="filterStudents()"
+    />
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Branch</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="student-table-body"></tbody>
+      </table>
+    </div>
+
+    <button onclick="exportToCSV()">Export to CSV</button>
+  </div>
+
+  <script src="script1.js"></script>
+</body>
+</html>
